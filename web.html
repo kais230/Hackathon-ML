@@ -1,0 +1,211 @@
+<!--<!DOCTYPE html>-->
+<!--<html>-->
+
+<!--  <script src="https://cdn.tailwindcss.com"></script>-->
+
+<!--<head>-->
+<!--    <title>JSON to Table</title>-->
+<!--    <style>-->
+<!--        .card {-->
+<!--            border-radius: 0.5rem;-->
+<!--            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);-->
+<!--        }-->
+
+<!--        table {-->
+<!--            border-collapse: collapse;-->
+<!--            width: 100%;-->
+<!--        }-->
+
+<!--        th, td {-->
+<!--            border: 1px solid #ddd;-->
+<!--            padding: 8px;-->
+<!--            text-align: left;-->
+<!--        }-->
+
+<!--        th {-->
+<!--            background-color: #f2f2f2;-->
+<!--        }-->
+<!--    </style>-->
+<!--</head>-->
+<!--<body class="bg-[#e2f3ea]">-->
+<!--    <div class="container mx-auto p-6">-->
+<!--        <div class="relative overflow-x-auto shadow-md sm:rounded-lg">-->
+<!--            <table class="w-full text-sm text-left text-gray-600 dark:text-gray-400">-->
+<!--                <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">-->
+<!--                    <tr>-->
+<!--                        <th scope="col" class="text-[#2b6463] px-6 py-3">-->
+<!--                            Invoice Number-->
+<!--                        </th>-->
+<!--                        <th scope="col" class="px-6 py-3">-->
+<!--                            Date-->
+<!--                        </th>-->
+<!--                        <th scope="col" class="px-6 py-3">-->
+<!--                            Customer-->
+<!--                        </th>-->
+<!--                        <th scope="col" class="px-6 py-3">-->
+<!--                            Item Description-->
+<!--                        </th>-->
+<!--                        <th scope="col" class="px-6 py-3">-->
+<!--                            Quantity-->
+<!--                        </th>-->
+<!--                        <th scope="col" class="px-6 py-3">-->
+<!--                            Price-->
+<!--                        </th>-->
+<!--                        <th scope="col" class="px-6 py-3">-->
+<!--                            Category-->
+<!--                        </th>-->
+<!--                    </tr>-->
+<!--                </thead>-->
+<!--                <tbody id="myTableBody"></tbody>-->
+<!--            </table>-->
+<!--        </div>-->
+<!--    </div>-->
+
+<!--    <div class="container mx-auto p-6 text-center">-->
+<!--        <a href="next.html" class="text-white bg-blue-500 rounded-lg py-2 px-4 mt-4 inline-block hover:bg-blue-600 transition-colors">Next</a>-->
+<!--    </div>-->
+
+<!--    <script>-->
+<!--        fetch('FinalJson.json')-->
+<!--            .then(response => response.json())-->
+<!--            .then(data => {-->
+<!--                const tableBody = document.querySelector('#myTableBody');-->
+<!--                data.forEach(item => {-->
+<!--                    const row = document.createElement('tr');-->
+<!--                    row.innerHTML = `-->
+<!--                        <td class="px-6 py-4 font-medium text-[#0c151d] whitespace-nowrap dark:text-white">-->
+<!--                            ${item['Invoice Number']}-->
+<!--                        </td>-->
+<!--                        <td class="text-[#0c151d] px-6 py-4">-->
+<!--                            ${item['Date']}-->
+<!--                        </td>-->
+<!--                        <td class="px-6 py-4">-->
+<!--                            ${item['Customer']}-->
+<!--                        </td>-->
+<!--                        <td class="px-6 py-4">-->
+<!--                            ${item['Item Description']}-->
+<!--                        </td>-->
+<!--                        <td class="px-6 py-4">-->
+<!--                            ${item['Quantity']}-->
+<!--                        </td>-->
+<!--                        <td class="px-6 py-4">-->
+<!--                            ${item['Price']}-->
+<!--                        </td>-->
+<!--                        <td class="px-6 py-4">-->
+<!--                            ${item['Category']}-->
+<!--                        </td>-->
+<!--                    `;-->
+<!--                    tableBody.appendChild(row);-->
+<!--                });-->
+<!--            })-->
+<!--            .catch(error => console.error(error));-->
+<!--    </script>-->
+<!--</body>-->
+<!--</html>-->
+
+
+<!DOCTYPE html>
+<html>
+<script src="https://cdn.tailwindcss.com"></script>
+<head>
+    <title>JSON to Table</title>
+    <style>
+        .card {
+            border-radius: 0.5rem;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        th,
+        td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f8f8f8;
+        }
+    </style>
+</head>
+
+<body class="bg-[#111827]">
+    <div class="container mx-auto p-6">
+        <div class="relative overflow-x-auto shadow-md sm:rounded-lg">
+            <table class="w-full text-sm text-left text-gray-600 dark:text-gray-400">
+                <thead class="text-xs text-gray-700 uppercase bg-gray-200 dark:bg-gray-700 dark:text-gray-400">
+                    <tr>
+                        <th scope="col" class="text-gray-700 px-6 py-3">
+                            Invoice Number
+                        </th>
+                        <th scope="col" class="text-gray-700 px-6 py-3">
+                            Date
+                        </th>
+                        <th scope="col" class="text-gray-700 px-6 py-3">
+                            Customer
+                        </th>
+                        <th scope="col" class="text-gray-700 px-6 py-3">
+                            Item Description
+                        </th>
+                        <th scope="col" class="text-gray-700 px-6 py-3">
+                            Quantity
+                        </th>
+                        <th scope="col" class="text-gray-700 px-6 py-3">
+                            Price
+                        </th>
+                        <th scope="col" class="text-gray-700 px-6 py-3">
+                            Category
+                        </th>
+                    </tr>
+                </thead>
+                <tbody id="myTableBody"></tbody>
+            </table>
+        </div>
+    </div>
+
+    <div class="container mx-auto p-6 text-center">
+        <a href="next.html" class="text-white bg-blue-500 rounded-lg py-2 px-4 mt-4 inline-block hover:bg-blue-600 transition-colors">Next</a>
+    </div>
+
+    <script>
+        fetch('FinalJson.json')
+            .then(response => response.json())
+            .then(data => {
+                const tableBody = document.querySelector('#myTableBody');
+                data.forEach(item => {
+                    const row = document.createElement('tr');
+                    row.innerHTML = `
+                        <td class="px-6 py-4 font-medium text-[#F3F4F6] whitespace-nowrap dark:text-white">
+                            ${item['Invoice Number']}
+                        </td>
+                        <td class="text-[#F3F4F6] px-6 py-4">
+                            ${item['Date']}
+                        </td>
+                        <td class="text-[#F3F4F6] px-6 py-4">
+                            ${item['Customer']}
+                        </td>
+                        <td class="text-[#F3F4F6] px-6 py-4">
+                            ${item['Item Description']}
+                        </td>
+                        <td class="text-[#F3F4F6] px-6 py-4">
+                            ${item['Quantity']}
+                        </td>
+                        <td class="text-[#F3F4F6] px-6 py-4">
+                            ${item['Price']}
+                        </td>
+                        <td class="text-[#F3F4F6] px-6 py-4">
+                            ${item['Category']}
+                        </td>
+                    `;
+                    tableBody.appendChild(row);
+                });
+            })
+            .catch(error => console.error(error));
+    </script>
+</body>
+
+</html>

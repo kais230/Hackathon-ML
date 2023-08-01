@@ -1,0 +1,257 @@
+<!--<!DOCTYPE html>-->
+<!--<html>-->
+<!--<head>-->
+<!--    <title>Expense Table</title>-->
+<!--    <style>-->
+<!--        table {-->
+<!--            border-collapse: collapse;-->
+<!--            width: 100%;-->
+<!--        }-->
+<!--        th, td {-->
+<!--            border: 1px solid black;-->
+<!--            padding: 8px;-->
+<!--            text-align: left;-->
+<!--        }-->
+<!--        th {-->
+<!--            background-color: #f2f2f2;-->
+<!--        }-->
+<!--    </style>-->
+<!--    <script>-->
+<!--        function loadTable() {-->
+<!--            var fileInput = document.getElementById('fileInput');-->
+<!--            var file = fileInput.files[0];-->
+<!--            var reader = new FileReader();-->
+
+<!--            reader.onload = function (event) {-->
+<!--                var jsonData = JSON.parse(event.target.result);-->
+
+<!--                var tableBody = document.getElementById('tableBody');-->
+<!--                tableBody.innerHTML = '';-->
+
+<!--                for (var category in jsonData) {-->
+<!--                    var expense = jsonData[category];-->
+<!--                    var row = document.createElement('tr');-->
+<!--                    var categoryCell = document.createElement('td');-->
+<!--                    var expenseCell = document.createElement('td');-->
+
+<!--                    categoryCell.innerText = category;-->
+<!--                    expenseCell.innerText = expense;-->
+
+<!--                    row.appendChild(categoryCell);-->
+<!--                    row.appendChild(expenseCell);-->
+<!--                    tableBody.appendChild(row);-->
+<!--                }-->
+<!--            };-->
+
+<!--            reader.readAsText(file);-->
+<!--        }-->
+
+<!--        function optimize() {-->
+<!--            var outputDiv = document.getElementById('output');-->
+<!--            outputDiv.innerText = 'Loading...';-->
+
+<!--            var xhr = new XMLHttpRequest();-->
+<!--            xhr.open('GET', 'assistant_reply.txt', true);-->
+<!--            xhr.onreadystatechange = function () {-->
+<!--                if (xhr.readyState === 4 && xhr.status === 200) {-->
+<!--                    outputDiv.innerText = xhr.responseText;-->
+<!--                }-->
+<!--            };-->
+<!--            xhr.send();-->
+<!--        }-->
+<!--    </script>-->
+<!--</head>-->
+<!--<body>-->
+<!--    <h1>Expense Table</h1>-->
+<!--    <input type="file" id="fileInput" accept=".json">-->
+<!--    <button onclick="loadTable()">Load JSON</button>-->
+<!--    <table>-->
+<!--        <thead>-->
+<!--            <tr>-->
+<!--                <th>Category</th>-->
+<!--                <th>Expense</th>-->
+<!--            </tr>-->
+<!--        </thead>-->
+<!--        <tbody id="tableBody"></tbody>-->
+<!--    </table>-->
+<!--    <button onclick="optimize()">Optimize</button>-->
+<!--    <div id="output"></div>-->
+<!--</body>-->
+<!--</html>-->
+
+<!--<!DOCTYPE html>-->
+<!--<html>-->
+<!--<head>-->
+<!--    <title>Expense Table</title>-->
+<!--    <script src="https://cdn.tailwindcss.com"></script>-->
+<!--    <style>-->
+<!--        table {-->
+<!--            border-collapse: collapse;-->
+<!--            width: 100%;-->
+<!--        }-->
+<!--        th, td {-->
+<!--            border: 1px solid #e5e7eb;-->
+<!--            padding: 8px;-->
+<!--            text-align: left;-->
+<!--        }-->
+<!--        th {-->
+<!--            background-color: #f2f2f2;-->
+<!--        }-->
+<!--    </style>-->
+<!--    <script>-->
+<!--        function loadTable() {-->
+<!--            var fileInput = document.getElementById('fileInput');-->
+<!--            var file = fileInput.files[0];-->
+<!--            var reader = new FileReader();-->
+
+<!--            reader.onload = function (event) {-->
+<!--                var jsonData = JSON.parse(event.target.result);-->
+
+<!--                var tableBody = document.getElementById('tableBody');-->
+<!--                tableBody.innerHTML = '';-->
+
+<!--                for (var category in jsonData) {-->
+<!--                    var expense = jsonData[category];-->
+<!--                    var row = document.createElement('tr');-->
+<!--                    var categoryCell = document.createElement('td');-->
+<!--                    var expenseCell = document.createElement('td');-->
+
+<!--                    categoryCell.innerText = category;-->
+<!--                    expenseCell.innerText = expense;-->
+
+<!--                    row.appendChild(categoryCell);-->
+<!--                    row.appendChild(expenseCell);-->
+<!--                    tableBody.appendChild(row);-->
+<!--                }-->
+<!--            };-->
+
+<!--            reader.readAsText(file);-->
+<!--        }-->
+
+<!--        function optimize() {-->
+<!--            var outputDiv = document.getElementById('output');-->
+<!--            outputDiv.innerText = 'Loading...';-->
+
+<!--            var xhr = new XMLHttpRequest();-->
+<!--            xhr.open('GET', 'assistant_reply.txt', true);-->
+<!--            xhr.onreadystatechange = function () {-->
+<!--                if (xhr.readyState === 4 && xhr.status === 200) {-->
+<!--                    outputDiv.innerText = xhr.responseText;-->
+<!--                }-->
+<!--            };-->
+<!--            xhr.send();-->
+<!--        }-->
+<!--    </script>-->
+<!--</head>-->
+<!--<body class="bg-[#111827] py-10">-->
+<!--    <div class="container mx-auto max-w-3xl p-6 bg-white rounded shadow-lg">-->
+<!--        <h1 class="text-3xl font-bold mb-6">Expense Table</h1>-->
+<!--        <div class="mb-6">-->
+<!--            <input type="file" id="fileInput" accept=".json" class="mr-2">-->
+<!--            <button onclick="loadTable()" class="px-4 py-2 bg-blue-500 text-white rounded">Load JSON</button>-->
+<!--        </div>-->
+<!--        <table class="w-full mb-6">-->
+<!--            <thead>-->
+<!--                <tr>-->
+<!--                    <th class="py-2">Category</th>-->
+<!--                    <th class="py-2">Expense</th>-->
+<!--                </tr>-->
+<!--            </thead>-->
+<!--            <tbody id="tableBody"></tbody>-->
+<!--        </table>-->
+<!--        <button onclick="optimize()" class="px-4 py-2 bg-green-500 text-white rounded">Optimize</button>-->
+<!--        <div id="output" class="mt-6"></div>-->
+<!--    </div>-->
+<!--</body>-->
+<!--</html>-->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Expense Table</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+        th, td {
+            border: 1px solid #e5e7eb;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
+    <script>
+        function loadTable() {
+            var filePath = "recom.json";
+
+            var xhr = new XMLHttpRequest();
+            xhr.open('GET', filePath, true);
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState === 4 && xhr.status === 200) {
+                    var jsonData = JSON.parse(xhr.responseText);
+
+                    var tableBody = document.getElementById('tableBody');
+                    tableBody.innerHTML = '';
+
+                    for (var category in jsonData) {
+                        var expense = jsonData[category];
+                        var row = document.createElement('tr');
+                        var categoryCell = document.createElement('td');
+                        var expenseCell = document.createElement('td');
+
+                        categoryCell.innerText = category;
+                        expenseCell.innerText = expense;
+
+                        row.appendChild(categoryCell);
+                        row.appendChild(expenseCell);
+                        tableBody.appendChild(row);
+                    }
+                }
+            };
+            xhr.send();
+        }
+
+        function optimize() {
+            var outputDiv = document.getElementById('output');
+            outputDiv.innerText = 'Loading...';
+
+            var xhr = new XMLHttpRequest();
+            xhr.open('GET', 'assistant_reply.txt', true);
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState === 4 && xhr.status === 200) {
+                    outputDiv.innerText = xhr.responseText;
+                }
+            };
+            xhr.send();
+        }
+    </script>
+</head>
+<body class="bg-[#111827] py-10">
+    <div class="container mx-auto max-w-3xl p-6 bg-white rounded shadow-lg">
+        <h1 class="text-3xl font-bold mb-6">Expense Raport</h1>
+        <div class="mb-6">
+            <button onclick="loadTable()" class="px-4 py-2 bg-blue-500 text-white rounded">Load Expenses</button>
+        </div>
+        <table class="w-full mb-6">
+            <thead>
+                <tr>
+                    <th class="py-2">Category</th>
+                    <th class="py-2">Expense</th>
+                </tr>
+            </thead>
+            <tbody id="tableBody"></tbody>
+        </table>
+        <button onclick="optimize()" class="px-4 py-2 bg-green-500 text-white rounded">Optimize</button>
+        <div id="output" class="mt-6"></div>
+    </div>
+</body>
+</html>
+
+
+
+
+
